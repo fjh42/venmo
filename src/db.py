@@ -25,7 +25,7 @@ class DatabaseDriver(object):
         Secures a connection with the database and stores it into the instance variable 'conn'
         """
         self.conn = sqlite3.connect(
-            "todo.db", check_same_thread= False
+            "users.db", check_same_thread= False
         )
 
     def create_users_table(self):

@@ -18,7 +18,7 @@ def get_all_users():
     """
     return json.dumps({"users":DB.get_all_users()}),200
 
-@app.route("api/users/<int:user_id>/",methods=["GET"])
+@app.route("/api/users/<int:user_id>/",methods=["GET"])
 def get_user_by_id(user_id):
     """
     Get an specific user by their id.
@@ -29,7 +29,7 @@ def get_user_by_id(user_id):
     
     return json.dumps(user),200
 
-@app.route("api/users/",methods=["POST"])
+@app.route("/api/users/",methods=["POST"])
 def create_new_user():
     """
     Create a new user with 'name','username', and 'balance'. Default balance to 0 if not provided.
@@ -48,7 +48,7 @@ def create_new_user():
 
     return json.dumps(new_user),201
 
-@app.route("api/users/<int:user_id>/",methods=["DELETE"])
+@app.route("/api/users/<int:user_id>/",methods=["DELETE"])
 def delete_user(user_id):
     user = DB.get_specific_user(user_id)
     if not user:
